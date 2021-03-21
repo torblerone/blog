@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is the personal blog of me, Torben Dury. You'll find everything tech-related here, including hands-on posts and discussions about latest tech trends and 
   potential industrial usage of certain new technologies and solutions.
 baseurl: "/blog/" # the subpath of your site, e.g. /blog
-url: "https://torblerone.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://torblerone.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: torben.music
 github_username:  torblerone
 
