@@ -9,7 +9,7 @@ categories: jekyll update chaos-engineering computer-science
 
 **Y**ou have probably already developed a software artifact that you were afraid of being touched by the wrong developer afterwards. There is probably a component in the overall system in your project or company that no one likes to do support or operating. And most likely you are afraid that your system will fail or malfunction. Did you nod your head while reading? Then stick with it and read about how to build more confidence in your system — **by breaking it.**
 
-<img style="margin: 16px 16px 16px 16px;" src="https://miro.medium.com/max/10826/0*eeUcvAyj8_khfmbB" title="Photo by Shawn Ang on Unsplash">
+<img style="margin: 16px 16px 16px 16px;" src="assets/2021-03-21-how-chaos-engineering-may-save-your-infrastructure/00.jpeg" title="Photo by Shawn Ang on Unsplash">
 
 ## Prelude
 
