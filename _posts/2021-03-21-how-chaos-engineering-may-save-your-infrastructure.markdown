@@ -15,9 +15,9 @@ categories: jekyll update chaos-engineering computer-science
 
 **Netflix, LinkedIn, and probably dozens of other companies have done the trick: They destroy their systems frequently and continuously to make them more resilient.**
 
-Netflix ‘Simian Army has taken big steps forward by developing various “monkeys”. You can read that on the Netflix TechBlog. LinkedIn has also developed several tools that they write about in various articles, for example in the infoQ journal.
+Netflix ‘Simian Army has taken big steps forward by developing various “monkeys”. You can read that on the [Netflix TechBlog](https://netflixtechblog.com/the-netflix-simian-army-16e57fbab116). LinkedIn has also developed several tools that they write about in various articles, for example in the infoQ journal.
 
-<img style="float: left; margin: 16px 16px 16px 16px;" src="https://miro.medium.com/max/10266/0*OiA2cWp7v6AAYxKU" width="400" title="Photo by freestocks on Unsplash">
+<img style="float: left; margin: 16px 16px 16px 16px;" src="{{ site.baseurl }}/assets/2021-03-21-how-chaos-engineering-may-save-your-infrastructure/01.jpeg" width="400" title="Photo by freestocks on Unsplash">
 
 **When developing software, we are too afraid that something might break.** We trust the operations department or a dedicated team that takes care of architecture, infrastructure and day-to-day operations. That will be fine, the team will bend it. Well, that’s where it’s going to explode!
 
@@ -35,7 +35,7 @@ The churn rate of customers has been firmly anchored in our business metrics for
 
 *How can you make your system more stable?* First, get an overview of the current status of the overall system. This is relatively easy if you already have a graphic or something similar. If not, make one. Your team, your department and everyone else involved will thank you! In the next step, you make a list of which components are critical (Tier-1) and which are non-critical (Tier-2). The Tier-2 components will be the ones we’ll experiment with first. Do you have a test environment? Use it! Do you not have? Put one on! Nobody likes people who smash the castle with the sandpit shovel in the productive environment.
 
-<img style="margin: 16px 16px 16px 16px;" src="https://miro.medium.com/max/11520/0*0dg4kIx_yyo2IOG_" title="Photo by Markus Spiske on Unsplash">
+<img style="margin: 16px 16px 16px 16px;" src="{{ site.baseurl }}/assets/2021-03-21-how-chaos-engineering-may-save-your-infrastructure/02.jpeg" title="Photo by Markus Spiske on Unsplash">
 
 Once you’ve put your sandbox on, it’s time to start thinking about what tests you want to do. We have already discussed the simple shutdown of components above. Here is a short list of some key points you should tap:
 
@@ -65,7 +65,7 @@ Above all, it is important to choose a fixed target for your tests. Be it a data
 
 **Realize that simply destroying your component won’t help anyone.** No maintainer will thank you if you have proven that his service is useless and unstable. It is therefore important that you analyze some useful data from the system during the experiment. These depend on the experiment you are performing and not every type of data set will be suitable for analyzing each experiment.
 
-<img style="float: left; margin: 16px 16px 16px 16px;" src="https://miro.medium.com/max/9620/0*lZiTrH4zNjee2eny" width="400" title="Photo by Luke Chesser on Unsplash">
+<img style="float: left; margin: 16px 16px 16px 16px;" src="{{ site.baseurl }}/assets/2021-03-21-how-chaos-engineering-may-save-your-infrastructure/03.jpeg" width="400" title="Photo by Luke Chesser on Unsplash">
 
 After you have identified suitable system and business metrics and can monitor them, it is time to establish a hypothesis. What can we expect how the system will behave during the experiment? Usually, assume that the system will continue to run normally. If the hypothesis is that the system crashes or trips over its own feet, you don’t have the necessary confidence in your system. Did you predict a mistake in the hypothesis? First, take care that this error will not occur before you run the experiment. Experiments are not there to confirm that an error is occurring, but rather that a system is able to deal with an error.
 
