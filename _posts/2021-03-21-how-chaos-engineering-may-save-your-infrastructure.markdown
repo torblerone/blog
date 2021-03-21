@@ -13,6 +13,8 @@ categories: jekyll update chaos-engineering computer-science
 
 ## Prelude
 
+----
+
 **Netflix, LinkedIn, and probably dozens of other companies have done the trick: They destroy their systems frequently and continuously to make them more resilient.**
 
 Netflix ‘Simian Army has taken big steps forward by developing various “monkeys”. You can read that on the [Netflix TechBlog](https://netflixtechblog.com/the-netflix-simian-army-16e57fbab116). LinkedIn has also developed several tools that they write about in various articles, for example in the infoQ journal.
@@ -27,6 +29,8 @@ Our database is very shaky, we take a complete snapshot of it before each risky 
 > It is high time that we come out of this ball pool of good weather development and start taking care of making our systems resistant!
 
 ## Start Breaking Stuff
+
+----
 
 **It is not difficult at all to get into Chaos Engineering.** The “hello world” of it is to simply push a component over the cliff. The shutdown tells us if the rest of our system is able to handle the situation and continue to operate normally.
 > All of our components are disposable and we have to live with them dying. The rest of our system has to gracefully handle it and continue operating — otherwise the customers will run away. 
@@ -51,6 +55,8 @@ Do these ideas sound too simple for you? Think about your own experiments. To st
 
 ## Chaos Done Easily
 
+----
+
 By the way, if you are not sure how to inject errors into the system, there is a remedy. There is now a wide range of open source tools, for example the [Chaos Toolkit](https://chaostoolkit.org/), with which you can automatically create and carry out experiments on native systems, but also in the Docker and Kubernetes environment.
 
 There are many other tools, I personally like to work with [Pumba](https://github.com/alexei-led/pumba) (docker-based chaos) and [Kube Monkey](https://github.com/asobti/kube-monkey) (Kubernetes-based chaos). But don’t let that stop you from writing your own scripts. For CPU stressing and many many more, there are beautiful shell scripts out there that you can use as an idea and inject into your applications. 
@@ -63,6 +69,8 @@ Above all, it is important to choose a fixed target for your tests. Be it a data
 
 ## Improve
 
+----
+
 **Realize that simply destroying your component won’t help anyone.** No maintainer will thank you if you have proven that his service is useless and unstable. It is therefore important that you analyze some useful data from the system during the experiment. These depend on the experiment you are performing and not every type of data set will be suitable for analyzing each experiment.
 
 <img style="float: left; margin: 16px 16px 16px 16px;" src="{{ site.baseurl }}/assets/2021-03-21-how-chaos-engineering-may-save-your-infrastructure/03.jpeg" width="400" title="Photo by Luke Chesser on Unsplash">
@@ -72,6 +80,8 @@ After you have identified suitable system and business metrics and can monitor t
 Once the target has been identified, the hypothesis established, the experiment performed, and the blast radius as small as possible, it is time to conduct the experiment. Switch on the monitoring and carry out the action. Watch the events live and record the data that has arisen, they will be useful for the analysis afterwards.
 
 ## Analyze
+
+----
 
 If the experiment is finished because it is finished, had to be canceled or other events have occurred, the analysis begins. Has the hypothesis been confirmed? If not, why not? At least specialists for the component that was tested should be part of the team’s initial analysis. Think about how the system can be improved to successfully complete the experiment in the next run. This is usually easier than expected. Did a fork bomb cause the VM below to say goodbye? Then you define a fixed number of processes for the component that it can start. Has the component turned out to be critical and must it not crash because the system can then no longer work? Then you should negotiate to activate high availability for the component and take other precautions.
 
