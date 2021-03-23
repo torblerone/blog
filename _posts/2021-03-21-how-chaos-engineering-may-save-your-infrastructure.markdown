@@ -2,7 +2,7 @@
 layout: post
 title:  "How Chaos Engineering May Save Your Infrastructure"
 date:   2021-03-21 11:59:00 +0100
-categories: jekyll update chaos-engineering computer-science
+categories: computer-science site-reliability-engineering chaos-engineering
 ---
 *A short story about how you can specifically inject errors into a running system - and how you will improve your system with it.*
 ----

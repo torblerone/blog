@@ -2,7 +2,7 @@
 layout: post
 title: "Refactor Your Terraform Repository Now"
 date: 2021-03-21 16:22:26 +0100
-categories: jekyll infrastructure iac computer-science sre site-reliability-engineering
+categories: computer-science infrastructure infrastructure-as-code
 ---
 *Still hardcoding all your default vars, still struggling with one or maybe two **big** Terraform files creating your whole infrastructure? Read on.*
 ----

@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello world!"
 date:   2021-03-20 19:41:50 +0100
-categories: jekyll update
+categories: general
 ---
 
 {% highlight java %}
