@@ -49,23 +49,23 @@ Terraform is great for modularization of infrastructure resources. Every module 
 
 ```
 .
-├── data.tf
-├── default-variables.tf
+├── variables.tf
 ├── examples
 |   | ...
 ├── main.tf
 ├── outputs.tf
 ├── README.md
-├── required-variables.tf
 └── test
     | ...
 ```
 
-There's no hard-coded values in here. If we need a hard-coded value, it's put into `default-variables.tf`. Every module attribute is a variable (some will be required, some may be put to default values).
+There's no hard-coded values in here. If we need a hard-coded value, it's put into `variables.tf` as a default. Every module attribute is a variable (some will be required, some may be put to default values).
 
 This will give you the possibility of placing elements where they belong. Is your `main.tf` file longer than `X` lines? Split it up into more logical files (following the rule *One file represents a type of resourece*).
 
 See the `examples` directory up there? This is your place for further development of your module. It will also carry some example usages of your module. Keep it as reusable as possible.
+
+The `outputs.tf` will define any outputs that will jump out of the module when you provision infrastructure resources with it.
 
 ## Three Tiers to Rule Them All
 
@@ -79,13 +79,17 @@ Using this provider plugins as-is will make you cry. Think of your three stages 
 
 You will extend (or initially create) your own library of primitive building blocks. This means defining a useful terraform resource following your own needs. You know best what your VMs need to look like. You know best what guides your databases need to follow. Standardize that and put it into a primitive terraform resource.
 
+This sub-directory will be called "atomic" resources. Those atomic resources won't be touched by your live-variables directly, but over our aggregated Second Tier modules.
+
 ### The Second Tier
 
 Build services from these primitive blocks. In your final repository (containing `/dev` `/int` and `/prd` directories), the only things you want to see in your code is "I want three standard VMs following our defaults". What you don't want to care about in those directories is stuff like "My VM needs to be in the standard VPC for my project". Do you see? Everything that is "standard" should be handled "standard" and this is your second Tier.
 
+This Second Tier modules (also called service-modules) serve your aggregated atomic-modules. They will be called from your project directories with optional variables.
+
 ### The Third Tier
 
-It can't get more abstract than this. This is where you call your second-Tier services from. You throw some variables at them and they provide your whole infrastructure.
+It can't get more abstract than this. This is where you call your second-Tier services from. You throw some variables at them and they provision your whole infrastructure.
 
 ### Conclusion of Three Tiers
 
