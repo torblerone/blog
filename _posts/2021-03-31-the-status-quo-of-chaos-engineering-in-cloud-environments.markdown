@@ -2,7 +2,7 @@
 layout: post
 title: "The Status Quo of Chaos Engineering in Cloud Environments"
 date: 2021-03-31 09:47:54 +0100
-categories: 
+categories: computer-science site-reliability-engineering chaos-engineering
 ---
 Chaos Engineering is not just a job description, but a way of thinking and approach that involves the entire team. Regular "match days" with the team become a regular ritual. Each team thinks through its own requirements and selects one or more tools. A one-stop shop makes everyone in the team happy. [[5]]
 ----
